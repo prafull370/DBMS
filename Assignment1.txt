@@ -1,0 +1,39 @@
+create table Client_Master(
+Client_No varchar2(6),
+Name varchar2(20),
+Address1 varchar2(30),
+Address2 varchar2(30),
+City varchar2(15),
+State varchar2(15),
+Pincode number(6),
+Bal_Due number(10,2)
+)
+--drop table Client_Master
+desc Client_Master
+
+create table Product_Master(
+Product_NO varchar2(6),
+Description varchar2(20),
+Profit_percentage number(6),
+Unit_Measure varchar(10),
+Qty_On_Hand Number(6),
+Reorder_Lvl Number(6),
+Sell_Price Number(7,2),
+Cost_Price Number(7,2)
+)
+desc Product_Master
+
+alter table Client_Master add DOB Date;
+
+alter table Client_Master modify Client_No Number
+
+alter table Client_Master drop column DOB
+
+alter table Product_Master rename column Sell_Price to SellPrice
+
+rename Product_Master to ProductMaster
+desc ProductMaster
+
+drop table Client_Master
+
+drop table ProductMaster

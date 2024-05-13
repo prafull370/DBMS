@@ -1,0 +1,45 @@
+create table Client_Master(
+Client_No varchar2(6),
+Name varchar2(20),
+Address1 varchar2(30),
+Address2 varchar2(30),
+City varchar2(15),
+State varchar2(15),
+Pincode number(6),
+Bal_Due number(10,2)
+)
+
+
+
+INSERT INTO Client_Master(Client_No, Name, City, Pincode, State, Bal_Due) VALUES ('C00001', 'Ivan Bayross', 'Mumbai', 400054, 'Maharashtra', 15000);
+INSERT INTO Client_Master(Client_No, Name, City, Pincode, State, Bal_Due) VALUES ('C00002', 'Mamta Mazumdar', 'Madras', 780001, 'Tamil Nadu', 0);
+INSERT INTO Client_Master(Client_No, Name, City, Pincode, State, Bal_Due) VALUES ('C00003', 'Chhaya Bankar', 'Mumbai', 400057, 'Maharashtra', 5000);
+INSERT INTO Client_Master(Client_No, Name, City, Pincode, State, Bal_Due) VALUES ('C00004', 'Ashwini Joshi', 'Bangalore', 560001, 'Karnataka', 0);
+INSERT INTO Client_Master(Client_No, Name, City, Pincode, State, Bal_Due) VALUES ('C00005', 'Hansel Colaco', 'Mumbai', 400060, 'Maharashtra', 2000);
+INSERT INTO Client_Master(Client_No, Name, City, Pincode, State, Bal_Due) VALUES ('C00006', 'Deepak Sharma', 'Mangalore', 560050 , 'Karnataka', 0);
+
+
+SELECT Name FROM Client_Master;
+
+SELECT * FROM Client_Master;
+
+SELECT NAME, CITY, STATE FROM Client_Master;
+
+SELECT * FROM CLIENT_MASTER WHERE CITY='Mumbai';
+
+SELECT NAME FROM Client_Master where Bal_Due=15000;
+
+SELECT * FROM Client_Master where name LIKE 'M%';
+
+SELECT * FROM Client_Master where state='Maharashtra' OR state='Karnataka'
+
+UPDATE Client_Master SET City='Bangalore' where Client_No='C00005';
+
+UPDATE Client_Master SET Bal_Due=1000 where client_no='C00001';
+select * from client_master
+
+UPDATE CLIENT_MASTER SET CITY='Pune' where Client_No='C00001';
+
+DELETE FROM Client_Master;
+
+DELETE FROM Client_Master where state='Tamil Nadu';

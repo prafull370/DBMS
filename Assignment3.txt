@@ -1,0 +1,79 @@
+CREATE TABLE PRODUCT_MASTER(
+productno VARCHAR2(6),
+description varchar2(15),
+profitpercent number(4,2),
+unitmeasure varchar2(10),
+qtyonhand number(8),
+reorderlvl number(8,2),
+sellprice number(8,2),
+costprice number(8,2)
+)
+
+insert into product_master(productno, description,profitpercent, unitmeasure, qtyonhand, reorderlvl, sellprice, costprice) values ('P00001', '1.44floppies', 5, 'piece', 200, 50, 350, 250)
+
+insert into product_master(productno, description,profitpercent, unitmeasure, qtyonhand, reorderlvl, sellprice, costprice) values ('P03453', 'Monitors', 6, 'piece', 150, 50, 500, 350)
+
+insert into product_master(productno, description,profitpercent, unitmeasure, qtyonhand, reorderlvl, sellprice, costprice) values ('P03453', 'Mouse', 5, 'piece', 100, 20, 600, 450)
+
+insert into product_master(productno, description,profitpercent, unitmeasure, qtyonhand, reorderlvl, sellprice, costprice) values ('P07865', '1.22floppies', 5, 'piece', 100, 20, 750, 500)
+
+insert into product_master(productno, description,profitpercent, unitmeasure, qtyonhand, reorderlvl, sellprice, costprice) values ('P07868', 'Keyboards', 2, 'piece', 80, 30, 850, 550)
+
+insert into product_master(productno, description,profitpercent, unitmeasure, qtyonhand, reorderlvl, sellprice, costprice) values ('P07885', 'CDDrive', 2.5, 'piece', 80, 30, 700, 450)
+
+insert into product_master(productno, description,profitpercent, unitmeasure, qtyonhand, reorderlvl, sellprice, costprice) values ('P07965', '540 HDD', 4, 'piece', 100, 40, 350, 250)
+
+insert into product_master(productno, description,profitpercent, unitmeasure, qtyonhand, reorderlvl, sellprice, costprice) values ('P07975', '1.44Drive', 5, 'piece', 70, 30, 300, 175)
+
+insert into product_master(productno, description,profitpercent, unitmeasure, qtyonhand, reorderlvl, sellprice, costprice) values ('P08865', '1.22Drive', 5, 'piece', 75, 30, 450, 300)
+
+
+
+select name from client_master;
+
+select name ,city from client_master;
+
+select * from product_master
+
+select * from client_master
+
+select * from client_master where city='Bombay';
+
+select * from client_master where client_no='C00001'
+
+select * from product_master where description='1.44Drive' or description='1.22Drive'
+
+select * from product_master where sellprice>500;
+
+select * from client_master where city='Bombay' or city='Delhi' or city='Madras'
+
+select * from product_master where sellprice>200 and sellprice<=500;
+
+select name, city, state from client_master where not state='Maharashtra'
+
+update product_master set sellprice=1150.00 where description='1.44floppies'
+select * from product_master
+
+delete from client_master where client_no='C00001'
+
+select sellprice,sellprice*15 as "new sellprice" from product_master
+
+select * from client_master where city like'_a%'
+
+select name from client_master where name like '_a%'
+
+select * from product_master order by description
+
+select count(*) as "total products" from product_master
+
+select round(avg(costprice),2) as "average price" from product_master
+
+select min(costprice) as "minimum price" from product_master
+
+select max(costprice) as "max_price", min(costprice) as "min_price" from product_master
+
+select count(*) as "no. of products" from product_master where costprice>150
+
+select * from product_master order by sellprice asc
+
+select * from product_master order by sellprice desc
