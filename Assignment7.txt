@@ -38,6 +38,7 @@ select * from employee where DOB is not null
 select Ename, to_char(DOJ, 'MON-DD-YYYY') as "hiredate" from employee 
 
 select * from employee where doj < to_date('2018-01-01', 'YYYY-MM-DD') 
+
 select * from employee where to_date(doj,'YYYY')<to_date('2018','YYYY')
 
 select * from employee where to_char(doj,'MON')='JAN'
